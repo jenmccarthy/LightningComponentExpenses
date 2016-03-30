@@ -1,0 +1,15 @@
+<aura:component>
+	<aura:registerEvent name="expenseRecordTypeName" type="c:newEvent"/>
+    <div class="slds-text-align--center" aura:id="buttonsWrapper">
+        <div class="slds-container--fluid">
+            <ui:button label="" class="slds-button slds-button--icon-bare expense  square" press="{!c.selectType}">
+                <img src='/resource/Expense' />
+            </ui:button>
+        </div>
+        <div class="slds-container--fluid">
+            <ui:button label="" class="slds-button slds-button--icon-bare kilometrage square" press="{!c.selectType}">
+                <img src='/resource/kilo' />
+            </ui:button>
+        </div>
+    </div>
+</aura:component>
