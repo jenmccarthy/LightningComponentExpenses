@@ -1,0 +1,65 @@
+<aura:component implements="force:appHostable">
+	<ltng:require scripts="/resource/jquery"/>
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>    
+    <aura:registerEvent name="expenseRecordTypeName" type="c:newEvent"/>
+    
+    <aura:attribute name="recordType" type="String" />
+    <aura:attribute name="expenseToAdd" type="SPDEV__Expense__c" default="{ sobjectType: 'SPDEV__Expense__c' }"/>
+
+    <!-- <aura:handler name="change" value="{!v.expenseToAdd}" action="{!c.viewRecord}"/>-->
+    
+    <div class="slds-tile">
+        <p class="slds-tile__title slds-truncate"><aura:text value="New Kilo" /></p>
+	</div>
+    <br/>    
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="accountInput">LER_Account</label>
+        <div class="slds-form-element__control">
+		    <force:inputField value="{!v.expenseToAdd.SPDEV__Account__c}" aura:id="accountInput" class="slds-input"/>
+        </div>
+    </div>    
+    <br/>    
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="numberKilometersInput">LER_Number_of_Kilometers</label>
+        <div class="slds-form-element__control">
+		    <force:inputField value="{!v.expenseToAdd.	SPDEV__Number_Kilo__c}" aura:id="numberKilometersInput" class="slds-input numberKilometersInput" />
+        </div>
+    </div>    
+    <br/>    
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="rateInput">LER_Rate</label>
+        <div class="slds-form-element__control">
+		    <force:inputField value="{!v.expenseToAdd.SPDEV__Rate__c}" aura:id="rateInput" class="slds-input rateInput"/>
+        </div>
+    </div>    
+    <br/>    
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="dateInput">LER_Date</label>
+        <div class="slds-form-element__control">
+		    <force:inputField value="{!v.expenseToAdd.SPDEV__Date__c}" aura:id="dateInput" class="slds-input"/>
+        </div>
+    </div>    
+    <br/>    
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="descriptionInput">LER_Description</label>
+        <div class="slds-form-element__control">
+		    <force:inputField value="{!v.expenseToAdd.SPDEV__Description__c}" aura:id="descriptionInput" class="slds-input"/>
+        </div>
+    </div>    
+    
+    <div class="slds-text-align--center" aura:id="buttonsWrapper">
+        <ui:button label="X" class="slds-button slds-button--icon-bare" press="{!c.cancel}">
+            <span class="slds-icon__container slds-icon__container--circle slds-icon-action-close">
+                <span class="slds-assistive-text">LER_Cancel</span>
+            </span>        
+        </ui:button>
+    	&nbsp;&nbsp;&nbsp;
+        <ui:button label="Save" class="slds-button slds-button--icon-bare" press="{!c.createExpense}">
+            <span class="slds-icon__container slds-icon__container--circle slds-icon-action-description">
+                
+                <span class="slds-assistive-text">LER_Save</span>
+            </span>        
+        </ui:button>
+    </div>
+
+</aura:component>
