@@ -1,0 +1,17 @@
+<aura:component implements="force:appHostable">
+   <ltng:require scripts="/resource/jquery" />
+    <aura:handler name="expenseRecordTypeName" event="c:newEvent" action="{!c.showRecordTypeComponent}"/>
+    
+  <div class="slds">
+        Test
+        <div id="TypeWrapper">
+	        <c:ExpensesTypeComponent />
+        </div>
+        <div id="KilometrageWrapper" style="display: none;">
+          <c:ExpensesTypeKilometerComponent />
+        </div>
+        <div id="ExpenseWrapper" style="display: none;">
+	        <c:ExpensesTypeExpenseComponent /> 
+        </div>
+	</div>	
+</aura:component>
